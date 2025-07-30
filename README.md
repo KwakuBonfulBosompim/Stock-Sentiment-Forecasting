@@ -1,58 +1,34 @@
-# Stock-Sentiment-Forecasting
-A stock price forecasting project combining news sentiment analysis and financial time series modeling
+# Stock Price Forecasting with Sentiment Analysis
 
-A data-driven project that combines **stock price forecasting** with **news sentiment analysis** to improve the accuracy of financial predictions. This project showcases the integration of time series analysis and natural language processing (NLP) in financial modeling.
+## Overview
 
----
+This project predicts Apple’s stock closing price using historical price data combined with news sentiment scores derived from VADER sentiment analysis.
 
-## 🔍 Problem Statement
+## Data
 
-Traditional stock price forecasting models rely heavily on historical price data, ignoring the impact of real-time sentiment and news. In this project, we enhance forecasting models by incorporating **daily financial news sentiment**, improving responsiveness to market-moving events.
+- Stock data: Historical daily prices and volume  
+- Sentiment data: News headlines sentiment scores
 
----
+## Features
 
-## 🎯 Objective
+- Price features: Open, High, Low, Close, Volume  
+- Sentiment: VADER compound scores
 
-To build a machine learning pipeline that:
-- Collects stock market data and financial news
-- Performs sentiment analysis on headlines
-- Merges sentiment and price data
-- Forecasts stock prices using both historical and sentiment inputs
-- Visualizes trends and model outputs in an interactive dashboard
+## Models Used
 
----
+- Random Forest Regressor  
+- ARIMA with sentiment as exogenous variable
 
-## 🧰 Tools & Libraries
+## Results
 
-- Python (Jupyter / Google Colab)
-- `yfinance` – Stock data API
-- `NewsAPI` or Kaggle datasets – News headlines
-- `VADER`, `TextBlob` – Sentiment scoring
-- `pandas`, `numpy`, `scikit-learn`, `statsmodels`
-- `matplotlib`, `plotly` – Visualization
-- `Streamlit` – Dashboard (optional)
-- GitHub – Version control and portfolio display
+| Model         | RMSE   | R² Score |
+|---------------|--------|----------|
+| Random Forest | 25.73  | -0.018   |
+| ARIMA         | 28.82  | -0.29    |
 
----
+## How to Run
 
-## 🗂️ Project Structure
-
-Stock-Sentiment-Forecasting/
-│
-├── data/ # Raw and cleaned data
-│ ├── historical_prices/
-│ └── news_sentiment/
-│
-├── notebooks/ Colab notebooks
-│ ├── 01_data_collection.ipynb
-│ ├── 02_sentiment_analysis.ipynb
-│ ├── 03_modeling.ipynb
-│ └── 04_dashboard.ipynb
-│
-├── visuals/ # Saved charts and figures
-│
-├── app/ # (Optional) Streamlit app
-│ └── app.py
-│
-├── README.md # Project overview
-└── requirements.txt # Python dependencies
+1. Clone the repo  
+2. Install requirements:  
+   ```bash
+   pip install -r requirements.txt
